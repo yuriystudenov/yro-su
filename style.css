@@ -52,6 +52,7 @@ ul {
 img {
     max-width: 100%;
     height: auto;
+    display: block;
 }
 
 .btn {
@@ -64,6 +65,7 @@ img {
     transition: all 0.3s ease;
     border: none;
     text-align: center;
+    font-family: 'Inter', sans-serif;
 }
 
 .btn-primary {
@@ -86,6 +88,21 @@ img {
 .btn-outline:hover {
     background-color: #0056b3;
     color: white;
+}
+
+.btn-telegram {
+    background-color: #0088cc;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-telegram:hover {
+    background-color: #0077b3;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 136, 204, 0.2);
 }
 
 .section-title {
@@ -136,16 +153,8 @@ img {
     gap: 12px;
 }
 
-.logo-icon {
-    width: 40px;
-    height: 40px;
-    background-color: #0056b3;
+.logo img {
     border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 20px;
 }
 
 .logo-text {
@@ -197,6 +206,7 @@ img {
     gap: 8px;
     font-weight: 600;
     color: #222;
+    white-space: nowrap;
 }
 
 .header-phone i {
@@ -213,6 +223,7 @@ img {
     border: none;
     cursor: pointer;
     padding: 0;
+    z-index: 1001;
 }
 
 .burger-menu span {
@@ -285,6 +296,7 @@ img {
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-top: 30px;
+    min-height: 400px;
 }
 
 .product-card {
@@ -295,6 +307,8 @@ img {
     transition: all 0.3s ease;
     padding: 30px;
     border: 1px solid #f0f0f0;
+    cursor: pointer;
+    position: relative;
 }
 
 .product-card:hover {
@@ -304,8 +318,8 @@ img {
 }
 
 .product-img {
-    width: 70px;
-    height: 70px;
+    width: 100%;
+    height: 200px;
     background-color: #f0f7ff;
     border-radius: 10px;
     display: flex;
@@ -313,18 +327,34 @@ img {
     justify-content: center;
     margin-bottom: 20px;
     color: #0056b3;
-    font-size: 28px;
+    font-size: 48px;
+    overflow: hidden;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .product-title {
     font-size: 20px;
     margin-bottom: 15px;
+    color: #222;
 }
 
 .product-description {
     color: #666;
     margin-bottom: 20px;
     font-size: 15px;
+    line-height: 1.5;
+}
+
+.product-price {
+    color: #0056b3;
+    font-weight: 700;
+    font-size: 18px;
+    margin: 15px 0;
 }
 
 .product-link {
@@ -339,6 +369,125 @@ img {
     gap: 12px;
 }
 
+/* Стили для пагинации */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.page-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    color: #333;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
+
+.page-link:hover {
+    background-color: #e6f0ff;
+    color: #0056b3;
+}
+
+.page-link.active {
+    background-color: #0056b3;
+    color: white;
+}
+
+.page-link.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.page-link.disabled:hover {
+    background-color: #f8fafc;
+    color: #333;
+}
+
+/* Стили для фильтров */
+.products-filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.filter-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.filter-btn:hover {
+    border-color: #0056b3;
+    color: #0056b3;
+}
+
+.filter-btn.active {
+    background-color: #0056b3;
+    color: white;
+    border-color: #0056b3;
+}
+
+.search-box {
+    position: relative;
+    width: 300px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 45px 12px 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #0056b3;
+    box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+}
+
+.search-box i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
 /* Секция проектов */
 .projects-section {
     background-color: #f8fafc;
@@ -348,6 +497,7 @@ img {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
+    margin-top: 30px;
 }
 
 .project-card {
@@ -357,16 +507,23 @@ img {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     padding: 30px;
     border-left: 4px solid #0056b3;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
 }
 
 .project-title {
     font-size: 22px;
     margin-bottom: 15px;
+    color: #222;
 }
 
 .project-description {
     color: #666;
     margin-bottom: 20px;
+    line-height: 1.6;
 }
 
 .project-details {
@@ -374,6 +531,7 @@ img {
     gap: 20px;
     font-size: 14px;
     color: #888;
+    flex-wrap: wrap;
 }
 
 .project-details i {
@@ -382,47 +540,23 @@ img {
 }
 
 /* Секция сертификатов */
-.certificates-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-}
-
-.certificate-card {
-    background: white;
-    border-radius: 10px;
-    padding: 30px 20px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-}
-
-.certificate-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.certificate-icon {
-    width: 70px;
-    height: 70px;
-    background-color: #f0f7ff;
-    border-radius: 50%;
+.certificates-gallery {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
-    margin: 0 auto 20px;
-    color: #0056b3;
-    font-size: 28px;
+    margin-top: 30px;
 }
 
-.certificate-title {
-    font-size: 18px;
-    margin-bottom: 10px;
+.certificates-gallery img {
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
-.certificate-text {
-    color: #666;
-    font-size: 14px;
+.certificates-gallery img:hover {
+    transform: scale(1.05);
 }
 
 /* Секция каталогов */
@@ -434,6 +568,7 @@ img {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    margin-top: 30px;
 }
 
 .catalog-card {
@@ -466,84 +601,14 @@ img {
 .catalog-title {
     font-size: 20px;
     margin-bottom: 10px;
+    color: #222;
 }
 
 .catalog-text {
     color: #666;
     margin-bottom: 20px;
     font-size: 15px;
-}
-
-/* Секция блога */
-.blog-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.blog-card {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    padding: 25px;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.blog-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.blog-date {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    background-color: #0056b3;
-    color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-}
-
-.blog-day {
-    font-size: 20px;
-    font-weight: 700;
-}
-
-.blog-month {
-    font-size: 12px;
-    text-transform: uppercase;
-}
-
-.blog-title {
-    font-size: 18px;
-    margin-bottom: 15px;
-    padding-right: 60px;
-}
-
-.blog-excerpt {
-    color: #666;
-    margin-bottom: 20px;
-    font-size: 15px;
-}
-
-.blog-link {
-    color: #0056b3;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.blog-link:hover {
-    gap: 8px;
+    line-height: 1.5;
 }
 
 /* Секция контактов */
@@ -582,18 +647,49 @@ img {
 .contact-item h3 {
     font-size: 18px;
     margin-bottom: 5px;
+    color: #222;
 }
 
-.contact-form {
-    background: white;
+.contact-telegram-btn {
+    margin-top: 20px;
+}
+
+.contact-telegram-btn .btn-telegram {
+    width: 100%;
+    padding: 16px;
+    font-size: 18px;
+}
+
+.contact-map {
+    background-color: #f8fafc;
     border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
 }
 
-.contact-form h3 {
-    font-size: 24px;
-    margin-bottom: 25px;
+.map-placeholder {
+    text-align: center;
+    color: #666;
+}
+
+.map-placeholder i {
+    font-size: 80px;
+    color: #0056b3;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.map-placeholder p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.map-address {
+    font-size: 16px;
+    color: #888;
+    font-weight: 500;
 }
 
 /* Футер */
@@ -610,10 +706,39 @@ img {
     margin-bottom: 40px;
 }
 
+.footer-logo .logo {
+    margin-bottom: 15px;
+}
+
 .footer-text {
     margin-top: 15px;
     font-size: 14px;
     line-height: 1.6;
+    color: #888;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: #0088cc;
+    color: white;
+    transform: translateY(-3px);
 }
 
 .footer-nav h3 {
@@ -628,43 +753,370 @@ img {
     gap: 12px;
 }
 
+.footer-nav a {
+    color: #aaa;
+    transition: color 0.3s ease;
+}
+
 .footer-nav a:hover {
     color: white;
 }
 
-.social-icons {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 25px;
+.footer-contact h3 {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
-.social-icons a {
+.footer-contact-item {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    font-size: 18px;
+    gap: 10px;
+    margin-bottom: 15px;
+    color: #aaa;
 }
 
-.social-icons a:hover {
-    background-color: #0056b3;
-    color: white;
+.footer-contact-item i {
+    color: #0088cc;
+    width: 20px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    text-align: center;
 }
 
 .copyright {
     font-size: 14px;
     color: #777;
+    margin-bottom: 5px;
+}
+
+/* Модальное окно для увеличенного изображения */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+}
+
+.modal-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.close-modal {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #0056b3;
+}
+
+.modal-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    transform: translateY(-50%);
+}
+
+.modal-nav button {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-nav button:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+/* Telegram Popup */
+.telegram-popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 3000;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.telegram-popup-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.telegram-popup {
+    background: white;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: popupSlide 0.3s ease-out;
+}
+
+@keyframes popupSlide {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close-popup {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #666;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+    z-index: 2;
+}
+
+.close-popup:hover {
+    color: #333;
+}
+
+.popup-content {
+    padding: 40px;
+    text-align: center;
+}
+
+.popup-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #0088cc, #34b7f1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    font-size: 40px;
+    color: white;
+}
+
+.popup-content h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.popup-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.telegram-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #f8fafc;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 25px 0;
+    border: 2px solid #e6f7ff;
+}
+
+.telegram-link i {
+    color: #0088cc;
+    font-size: 24px;
+}
+
+.telegram-username {
+    font-size: 20px;
+    font-weight: 600;
+    color: #0088cc;
+    text-decoration: none;
+}
+
+.telegram-username:hover {
+    text-decoration: underline;
+}
+
+.popup-note {
+    font-size: 14px;
+    color: #888;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.popup-content .btn-telegram {
+    width: 100%;
+    padding: 16px;
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.popup-help {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    text-align: left;
+}
+
+.popup-help p {
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.popup-help i {
+    color: #0088cc;
+    margin-top: 2px;
+}
+
+/* Индикатор загрузки */
+.loading-spinner {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 0;
+}
+
+.loading-spinner i {
+    font-size: 48px;
+    color: #0056b3;
+    margin-bottom: 20px;
+}
+
+.loading-spinner p {
+    color: #666;
+    font-size: 18px;
+}
+
+/* Стили для галереи товара (на детальной странице) */
+.product-gallery {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.main-product-image {
+    flex: 1;
+    max-width: 400px;
+}
+
+.main-product-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.main-product-image img:hover {
+    transform: scale(1.02);
+}
+
+.product-thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumbnail.active {
+    border-color: #0056b3;
+}
+
+.thumbnail:hover {
+    border-color: #0056b3;
 }
 
 /* Адаптивность */
+@media (max-width: 1200px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 1024px) {
     .products-grid,
-    .certificates-grid,
-    .catalogs-grid,
-    .blog-grid {
+    .catalogs-grid {
         grid-template-columns: repeat(2, 1fr);
     }
     
@@ -674,6 +1126,10 @@ img {
     
     .section-title {
         font-size: 32px;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -698,6 +1154,7 @@ img {
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
+        z-index: 999;
     }
     
     .nav.active {
@@ -729,8 +1186,9 @@ img {
         gap: 40px;
     }
     
-    .projects-grid,
-    .footer-content {
+    .footer-content,
+    .products-grid,
+    .catalogs-grid {
         grid-template-columns: 1fr;
         gap: 30px;
     }
@@ -738,13 +1196,28 @@ img {
     section {
         padding: 60px 0;
     }
+    
+    .products-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .search-box {
+        width: 100%;
+    }
+    
+    .filter-group {
+        justify-content: center;
+    }
+    
+    .popup-content {
+        padding: 30px 20px;
+    }
 }
 
 @media (max-width: 576px) {
     .products-grid,
-    .certificates-grid,
-    .catalogs-grid,
-    .blog-grid {
+    .catalogs-grid {
         grid-template-columns: 1fr;
     }
     
@@ -755,5 +1228,28 @@ img {
     .section-title {
         font-size: 28px;
     }
-   
+    
+    .product-gallery {
+        flex-direction: column;
+    }
+    
+    .product-thumbnails {
+        flex-direction: row;
+        order: 2;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+    
+    .thumbnail {
+        flex-shrink: 0;
+    }
+    
+    .main-product-image {
+        max-width: 100%;
+    }
+    
+    .telegram-popup {
+        width: 95%;
+        margin: 20px;
+    }
 }

@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="images/logo.jpg">
 </head>
 <body>
     <!-- Шапка сайта -->
@@ -16,7 +17,7 @@
         <div class="container">
             <div class="header-content">
                 <a href="#home" class="logo">
-                  <img src="images/logo.jpg" >
+                  <img src="images/logo.jpg" alt="Логотип YRO" width="50" height="50">
                 </a>
                 
                 <nav class="nav">
@@ -55,18 +56,18 @@
                         И НАДЁЖНАЯ АВТОМАТИКА
                     </h1>
                     <p class="hero-subtitle">для цепей постоянного и переменного тока</p>
-                    <button class="btn btn-primary">Консультация</button>
+                    <button class="btn btn-primary" onclick="openTelegramPopup()">Консультация в Telegram</button>
                 </div>
             </div>
         </section>
 
         <!-- Секция с баннером -->
         <section>
-                        <center>
-                        <img src="images/head.png" class="section-title">
-                        </center>
-                        <h2 class="section-title">Всё для строительства солнечных станций</h2>
-      </section>
+            <center>
+                <img src="images/head.png" alt="Всё для строительства солнечных станций" class="section-title">
+            </center>
+            <h2 class="section-title">Всё для строительства солнечных станций</h2>
+        </section>
           
         <!-- Секция с продукцией -->
         <section class="products-section" id="products">
@@ -74,60 +75,36 @@
                 <h2 class="section-title">Топовая продукция</h2>
                 <p class="section-subtitle">Качественное оборудование для промышленной автоматизации</p>
                 
-                <div class="products-grid">
-                    <div class="product-card">
-                        <div class="product-img">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <h3 class="product-title">Промышленные контроллеры</h3>
-                        <p class="product-description">Высоконадёжные программируемые логические контроллеры для автоматизации технологических процессов.</p>
-                        <a href="#" class="product-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                <!-- Фильтры и поиск -->
+                <div class="products-filters">
+                    <div class="filter-group">
+                        <button class="filter-btn active" data-filter="all">Все товары</button>
+                        <button class="filter-btn" data-filter="Контроллеры">Контроллеры</button>
+                        <button class="filter-btn" data-filter="Солнечная энергетика">СЭС</button>
+                        <button class="filter-btn" data-filter="Электропривод">Электропривод</button>
+                        <button class="filter-btn" data-filter="Измерительное оборудование">Датчики</button>
+                        <button class="filter-btn" data-filter="Программное обеспечение">ПО</button>
+                        <button class="filter-btn" data-filter="Силовое оборудование">Силовое</button>
+                        <button class="filter-btn" data-filter="Сетевое оборудование">Сетевое</button>
                     </div>
-                    
-                    <div class="product-card">
-                        <div class="product-img">
-                            <i class="fas fa-solar-panel"></i>
-                        </div>
-                        <h3 class="product-title">Инверторы для СЭС</h3>
-                        <p class="product-description">Мощные инверторы для солнечных электростанций с КПД до 98,5% и встроенными системами мониторинга.</p>
-                        <a href="#" class="product-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    <div class="search-box">
+                        <input type="text" id="productSearch" placeholder="Поиск товаров...">
+                        <i class="fas fa-search"></i>
                     </div>
-                    
-                    <div class="product-card">
-                        <div class="product-img">
-                            <i class="fas fa-sliders-h"></i>
-                        </div>
-                        <h3 class="product-title">Частотные преобразователи</h3>
-                        <p class="product-description">Энергоэффективные преобразователи частоты для управления скоростью вращения асинхронных двигателей.</p>
-                        <a href="#" class="product-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Контейнер для продуктов -->
+                <div class="products-grid" id="productsContainer">
+                    <!-- Продукты будут загружены через JavaScript -->
+                    <div class="loading-spinner">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>Загрузка товаров...</p>
                     </div>
-                    
-                    <div class="product-card">
-                        <div class="product-img">
-                            <i class="fas fa-tachometer-alt"></i>
-                        </div>
-                        <h3 class="product-title">Датчики и сенсоры</h3>
-                        <p class="product-description">Широкий спектр измерительного оборудования для контроля параметров технологических процессов.</p>
-                        <a href="#" class="product-link">Подробнее <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    
-                    <div class="product-card">
-                        <div class="product-img">
-                            <i class="fas fa-project-diagram"></i>
-                        </div>
-                        <h3 class="product-title">SCADA-системы</h3>
-                        <p class="product-description">Программное обеспечение для диспетчеризации и управления промышленными объектами в реальном времени.</p>
-                        <a href="#" class="product-link">Подробнее <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    
-                    <div class="product-card">
-                        <div class="product-img">
-                            <i class="fas fa-plug"></i>
-                        </div>
-                        <h3 class="product-title">Силовое оборудование</h3>
-                        <p class="product-description">Распределительные устройства, автоматические выключатели и защитная аппаратура до 35 кВ.</p>
-                        <a href="#" class="product-link">Подробнее <i class="fas fa-arrow-right"></i></a>
-                    </div>
+                </div>
+                
+                <!-- Пагинация -->
+                <div class="pagination" id="pagination">
+                    <!-- Пагинация будет сгенерирована через JavaScript -->
                 </div>
             </div>
         </section>
@@ -137,21 +114,67 @@
             <div class="container">
                 <h2 class="section-title">Наши проекты</h2>
                 <p class="section-subtitle">Крупнейшие реализации в области промышленной автоматизации</p>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3 class="project-title">Солнечная электростанция 10 МВт</h3>
+                        <p class="project-description">Полный цикл поставки оборудования и пуско-наладочных работ для солнечной электростанции в Саратовской области.</p>
+                        <div class="project-details">
+                            <div><i class="fas fa-calendar"></i> 2023 год</div>
+                            <div><i class="fas fa-map-marker-alt"></i> Саратовская область</div>
+                            <div><i class="fas fa-bolt"></i> 10 МВт</div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h3 class="project-title">Автоматизация водоканала</h3>
+                        <p class="project-description">Модернизация системы управления и диспетчеризации городского водоканала с внедрением SCADA-системы.</p>
+                        <div class="project-details">
+                            <div><i class="fas fa-calendar"></i> 2024 год</div>
+                            <div><i class="fas fa-map-marker-alt"></i> г. Пенза</div>
+                            <div><i class="fas fa-tachometer-alt"></i> 150 датчиков</div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h3 class="project-title">Промышленная котельная</h3>
+                        <p class="project-description">Автоматизация промышленной котельной с установкой частотных преобразователей и контроллеров горения.</p>
+                        <div class="project-details">
+                            <div><i class="fas fa-calendar"></i> 2024 год</div>
+                            <div><i class="fas fa-map-marker-alt"></i> Самарская область</div>
+                            <div><i class="fas fa-fire"></i> 50 Гкал/час</div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h3 class="project-title">Линия розлива напитков</h3>
+                        <p class="project-description">Комплексная автоматизация линии розлива безалкогольных напитков производительностью 20 000 бутылок/час.</p>
+                        <div class="project-details">
+                            <div><i class="fas fa-calendar"></i> 2023 год</div>
+                            <div><i class="fas fa-map-marker-alt"></i> Республика Татарстан</div>
+                            <div><i class="fas fa-industry"></i> 20 000 ед/час</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Секция сертификатов -->
         <section class="certificates-section" id="certificates">
             <div class="container">
                 <h2 class="section-title">Сертификаты</h2>
-                <img src="images/cert.jpg" width="225" height="300" >
-                <img src="images/cert1.jpg" width="225" height="300" >
-                <img src="images/cert2.jpg" width="225" height="300" >
-                <img src="images/cert3.jpg" width="225" height="300" >
-                <img src="images/cert4.jpg" width="225" height="300" >
-                <img src="images/cert5.jpg" width="225" height="300" >
-                <img src="images/cert6.jpg" width="225" height="300" >
-                <img src="images/cert7.jpg" width="225" height="300" >
-                <img src="images/cert8.jpg" width="225" height="300" >
+                <div class="certificates-gallery">
+                    <img src="images/cert.jpg" alt="Сертификат 1" width="225" height="300">
+                    <img src="images/cert1.jpg" alt="Сертификат 2" width="225" height="300">
+                    <img src="images/cert2.jpg" alt="Сертификат 3" width="225" height="300">
+                    <img src="images/cert3.jpg" alt="Сертификат 4" width="225" height="300">
+                    <img src="images/cert4.jpg" alt="Сертификат 5" width="225" height="300">
+                    <img src="images/cert5.jpg" alt="Сертификат 6" width="225" height="300">
+                    <img src="images/cert6.jpg" alt="Сертификат 7" width="225" height="300">
+                    <img src="images/cert7.jpg" alt="Сертификат 8" width="225" height="300">
+                    <img src="images/cert8.jpg" alt="Сертификат 9" width="225" height="300">
+                </div>
+            </div>
         </section>
 
         <!-- Секция каталогов -->
@@ -168,7 +191,7 @@
                         <h3 class="catalog-title">Каталог YRO с товарами</h3>
                         <p class="catalog-text">В нашем каталоге предоставляют большой выбор различных товаров от мелкого товара как зарядные устройства так и до крупных товаров. Мы предоставляем очень большой выбор вы можете сами посмотреть их
 в в самом каталоге.</p>
-                        <a href="#" class="btn btn-outline">Скачать каталог</a>
+                        <button class="btn btn-outline" onclick="openTelegramPopup()">Скачать каталог</button>
                     </div>
                     
                     <div class="catalog-card">
@@ -178,7 +201,7 @@
                         <h3 class="catalog-title">Каталог с продукцией заправок YRO</h3>
                         <p class="catalog-text">В нашем каталоге предоставляют большой выбор различных товаров от мелкого товара как зарядные устройства так и до крупных товаров. Мы предоставляем очень большой выбор вы можете сами посмотреть их
 в в самом каталоге.</p>
-                        <a href="#" class="btn btn-outline">Скачать каталог</a>
+                        <button class="btn btn-outline" onclick="openTelegramPopup()">Скачать каталог</button>
                     </div>
                     
                     <div class="catalog-card">
@@ -188,7 +211,7 @@
                         <h3 class="catalog-title">Каталог с продукцией автоматики YRO</h3>
                         <p class="catalog-text">В нашем каталоге предоставляют большой выбор различных товаров от мелкого товара как зарядные устройства так и до крупных товаров. Мы предоставляем очень большой выбор вы можете сами посмотреть их
 в в самом каталоге.</p>
-                        <a href="#" class="btn btn-outline">Скачать каталог</a>
+                        <button class="btn btn-outline" onclick="openTelegramPopup()">Скачать каталог</button>
                     </div>
                     <div class="catalog-card">
                         <div class="catalog-icon">
@@ -197,7 +220,7 @@
                         <h3 class="catalog-title">Каталог Solar Project YRO</h3>
                         <p class="catalog-text">В нашем каталоге предоставляют большой выбор различных товаров от мелкого товара как зарядные устройства так и до крупных товаров. Мы предоставляем очень большой выбор вы можете сами посмотреть их
 в в самом каталоге.</p>
-                        <a href="#" class="btn btn-outline">Скачать каталог</a>
+                        <button class="btn btn-outline" onclick="openTelegramPopup()">Скачать каталог</button>
                     </div>
                 </div>
             </div>
@@ -215,7 +238,7 @@
                             <i class="fas fa-map-marker-alt"></i>
                             <div>
                                 <h3>Адрес офиса</h3>
-                                <p>г.Пенза, ул.Московская, 99</p>
+                                <p>г. Пенза, ул. Московская, 99</p>
                             </div>
                         </div>
                         
@@ -238,12 +261,33 @@
                         <div class="contact-item">
                             <i class="fab fa-telegram"></i>
                             <div>
-                                <h3>Telegram</h3>
+                                <h3>Telegram для консультаций</h3>
                                 <p>@yuriystudenov</p>
                             </div>
                         </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h3>Режим работы</h3>
+                                <p>Пн-Пт: 9:00-18:00<br>Сб: 10:00-16:00<br>Вс: выходной</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-telegram-btn">
+                            <button class="btn btn-telegram" onclick="openTelegramPopup()">
+                                <i class="fab fa-telegram"></i> Написать в Telegram
+                            </button>
+                        </div>
                     </div>
-                                
+                    
+                    <div class="contact-map">
+                        <div class="map-placeholder">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <p>Карта расположения офиса</p>
+                            <p class="map-address">г. Пенза, ул. Московская, 99</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -254,7 +298,28 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="images/logo.jpg" >
+                    <a href="#home" class="logo">
+                        <img src="images/logo.jpg" alt="Логотип YRO" width="40" height="40">
+                        <div class="logo-text">
+                            <span class="logo-title">YRO</span>
+                            <span class="logo-subtitle">Промышленные системы</span>
+                        </div>
+                    </a>
+                    <p class="footer-text">Лидер в области промышленной автоматики и электрооборудования в России</p>
+                    <div class="social-icons">
+                        <a href="https://t.me/yuriystudenov" target="_blank" title="Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" title="VK">
+                            <i class="fab fa-vk"></i>
+                        </a>
+                        <a href="#" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
                 </div>
                 
                 <div class="footer-nav">
@@ -263,22 +328,85 @@
                         <li><a href="#home">Главная</a></li>
                         <li><a href="#products">Продукты</a></li>
                         <li><a href="#projects">Проекты</a></li>
+                        <li><a href="#certificates">Сертификаты</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-nav">
                     <h3>Ресурсы</h3>
                     <ul>
-                        <li><a href="#certificates">Сертификаты</a></li>
                         <li><a href="#catalogs">Каталоги</a></li>
                         <li><a href="#contacts">Контакты</a></li>
+                        <li><a href="#" onclick="openTelegramPopup(); return false;">Консультация</a></li>
+                        <li><a href="#">Политика конфиденциальности</a></li>
                     </ul>
                 </div>
-                    <p class="copyright">© 2026 YRO. Все права защищены.</p>
+                
+                <div class="footer-contact">
+                    <h3>Контакты</h3>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+7(927)375-05-17</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>solar@ust.su</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fab fa-telegram"></i>
+                        <span>@yuriystudenov</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>г. Пенза, ул. Московская, 99</span>
+                    </div>
                 </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2024 YRO. Все права защищены.</p>
+                <p class="copyright">ОГРН 1234567890123, ИНН 1234567890</p>
             </div>
         </div>
     </footer>
-<script defer src="/script.js"></script>
+
+    <!-- Модальное окно для изображений -->
+    <div class="modal-overlay" id="imageModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <img id="modalImage" src="" alt="">
+            <div class="modal-nav">
+                <button id="prevImage"><i class="fas fa-chevron-left"></i></button>
+                <button id="nextImage"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Telegram Popup -->
+    <div class="telegram-popup-overlay" id="telegramPopup">
+        <div class="telegram-popup">
+            <button class="close-popup" id="closeTelegramPopup">&times;</button>
+            <div class="popup-content">
+                <div class="popup-icon">
+                    <i class="fab fa-telegram"></i>
+                </div>
+                <h3>Консультация в Telegram</h3>
+                <p>Для получения консультации, скачивания каталогов или коммерческого предложения напишите нам в Telegram:</p>
+                <div class="telegram-link">
+                    <i class="fab fa-telegram"></i>
+                    <a href="https://t.me/yuriystudenov" target="_blank" class="telegram-username">@yuriystudenov</a>
+                </div>
+                <p class="popup-note">Нажмите на ссылку выше, чтобы перейти в Telegram и начать диалог</p>
+                <button class="btn btn-telegram" onclick="window.open('https://t.me/yuriystudenov', '_blank')">
+                    <i class="fab fa-telegram"></i> Открыть Telegram
+                </button>
+                <div class="popup-help">
+                    <p><i class="fas fa-info-circle"></i> Если у вас нет Telegram, вы можете позвонить по телефону: <strong>+7(927)375-05-17</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
