@@ -2,13 +2,9 @@
   "products": [
     {
       "id": 1,
-      "name": "Промышленные контроллеры",
-      "description": "Высоконадёжные программируемые логические контроллеры для автоматизации технологических процессов. Современные модели с поддержкой промышленных протоколов, удалённым доступом и встроенными системами диагностики.",
-      "category": "Контроллеры",
+      "name": "Module RSD Controller Rapid Shutdown YRSD-P-PLC",
       "images": [
-        "images/products/controller1.jpg",
-        "images/products/controller2.jpg",
-        "images/products/controller3.jpg"
+        "images/products/1.png"
       ],
       "features": [
         "Высокая надёжность до 100 000 часов наработки на отказ",
