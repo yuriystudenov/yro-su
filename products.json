@@ -3,6 +3,8 @@
     {
       "id": 1,
       "name": "Module RSD Controller Rapid Shutdown YRSD-P-PLC",
+      "description": "f.",
+      "category": "Контроллеры",
       "images": [
         "images/products/1.png"
       ],
